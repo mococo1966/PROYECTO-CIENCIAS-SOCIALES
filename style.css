@@ -4,6 +4,9 @@
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   color: #333;
@@ -33,6 +36,60 @@ body {
   list-style: none;
 }
 
+.intro-tema { text-align: center; padding-bottom: 0; }
+.intro-tema h1 { font-size: 2.2rem; color: #1a202c; margin-bottom: 0.5rem; }
+.intro-tema p { color: #4a5568; }
+
+.tarjetas { align-items: start; }
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pista {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2b6cb0;
+  transition: opacity 0.3s ease;
+}
+
+.extra {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  border-color: #d5dce9;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35),
+              0 8px 24px rgba(59, 130, 246, 0.35);
+}
+
+.card:hover .extra,
+.card:focus-within .extra {
+  max-height: 260px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.card:hover .pista,
+.card:focus-within .pista { opacity: 0; }
+
+.card:focus-visible { outline: 3px solid #9bb0e7; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .extra, .pista { transition: none; }
+  .card:hover, .card:focus-within { transform: none; }
+}
+
 .navbar a {
   color: #fff;
   text-decoration: none;
@@ -48,7 +105,7 @@ body {
 /* Hero */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), #2c3e50;
-  color: white;
+  color: rgb(119, 116, 116);
   text-align: center;
   padding: 4rem 1rem;
 }
@@ -67,19 +124,20 @@ body {
 }
 
 .alt-bg {
-  background-color: #f4f6f7;
+  background-color: #b5c9d1;
 }
 
 .seccion h2 {
   font-size: 2rem;
-  color: #4094e7;
+  color: #ee8105;
   margin-bottom: 1rem;
 }
 
 .seccion > p {
   margin-bottom: 2rem;
-  color: #7a7474;
+  color: #f86a6a94;
 }
+
 
 /* Tarjetas */
 .tarjetas {
@@ -90,7 +148,7 @@ body {
 }
 
 .card {
-  background: white;
+  background: rgba(247, 207, 231, 0.884);
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1.5rem;
@@ -100,19 +158,102 @@ body {
 }
 
 .card h3 {
-  color: #2980b9;
+  color: #011624;
   margin-bottom: 0.5rem;
 }
 
 /* Footer */
 footer {
-  background: #1a252f;
-  color: white;
+  background: #e3ebee;
+  color: rgb(8, 36, 30);
   text-align: center;
   padding: 1.5rem;
 }/* Si tu texto está dentro de una clase o párrafo */
 .definicion-estado {
-    color: #ffffff; /* Blanco claro para alto contraste */
+    color: #030a0c; /* Blanco claro para alto contraste */
     font-size: 1rem; /* Tamaño adecuado */
     line-height: 1.6; /* Espaciado entre líneas para facilitar la lectura */
+}
+/* Fondo de la sección Territorio */
+#territorio {
+  background-color: #79fc8a;
+}
+
+/* Textos que estaban en rojo, ahora negros */
+.seccion > p,
+.intro-tema p {
+  color: #000000;
+}
+#gobierno {
+  background-color: #fce7f3; /* rosa pálido */
+}
+#gobierno h2 {
+  color: #e0582b; /* naranja oscuro, contraste AA */
+}
+.hero p,
+.definicion-estado {
+  color: #ffffff;
+  font-size: 1.25rem; /* cambiá este valor para el tamaño */
+  line-height: 1.7;
+}
+footer {
+  background-color: #1e3a8a; /* azul intenso */
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer p {
+  color: #ffffff;
+  font-size: 1.3rem; /* cambiá este valor para el tamaño */
+  margin: 0;
+}
+.tarjetas { align-items: start; }
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pista {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e40af;
+  transition: opacity 0.3s ease;
+}
+
+.extra {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35),
+              0 8px 24px rgba(59, 130, 246, 0.35);
+}
+
+.card:hover .extra,
+.card:focus-within .extra {
+  max-height: 260px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.card:hover .pista,
+.card:focus-within .pista { opacity: 0; }
+
+.card:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .extra, .pista { transition: none; }
+  .card:hover, .card:focus-within { transform: none; }
 }
